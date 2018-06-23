@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Ad Manager</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="js/SignUp.js"></script>
+  <link rel="stylesheet" type="text/css" href="Masterstyle.css">
+</head>
+
+<body>
+  <div class="container" style="margin-top:30px">
+    <div class="text-center" id="header" style="margin-bottom:0">
+      <h3>Ad Manager</h3>
+      <p>Ultimate Solution for your Ad Management!</p>
+    </div>
+    <!-- <div>
+      <b class="well pl-3 m-2">SignUp</b> 
+    </div>  -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark"> 
+        <a class="navbar-brand" href="#">SignUp</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="Homepage.html">Home</a>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="#">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav> 
+    <div class="mainBody">
+      <div class="row m-3">
+        <div class="col-sm-4  mx-auto">
+          <h2 class="border-bottom pb-2">Sign Up</h2>
+
+          <form  ng-app="signupApp"  ng-controller="signupController" name="signup"  action="#"> 
+           
+              <div class="form-group">
+                  <label for="firstName">First name*:</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="Enter first name" name="firstName" ng-model="firstName" required>
+                  <span style="color:red" ng-show="signup.firstName.$dirty && signup.firstName.$invalid">
+                      <span ng-show="signup.firstName.$error.required">First name is required.</span> 
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last name*:</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name" name="lastName" ng-model="lastName" required>
+                    <span style="color:red" ng-show="signup.lastName.$dirty && signup.lastName.$invalid">
+                        <span ng-show="signup.lastName.$error.required">Last name is required.</span> 
+                  </div>
+
+            <div class="form-group">
+              <label for="email">Email*:</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" ng-model="email" required>
+              <span style="color:red" ng-show="signup.email.$dirty && signup.email.$invalid">
+                  <span ng-show="signup.email.$error.required">Email is required.</span>
+                  <span ng-show="signup.email.$error.email">Invalid email address.</span>
+            </div>
+           
+
+            <div class="form-group">
+                <label for="nationalId">National Id*:</label>
+                <input type="text" class="form-control" id="nationalId" placeholder="Enter national id" name="nationalId" ng-model="nationalId" required>
+                <span style="color:red" ng-show="signup.nationalId.$dirty && signup.nationalId.$invalid">
+                    <span ng-show="signup.nationalId.$error.required">National id is required.</span> 
+              </div>
+
+            <div class="form-group">
+                <label for="email">Password*:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" ng-model="password" required>
+                <span style="color:red" ng-show="signup.password.$dirty && signup.password.$invalid">
+                    <span ng-show="signup.email.$error.required">password is required.</span> 
+            </div> 
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password*:</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" name="confirmPassword" ng-model="confirmPassword" required confirmPasswordDirective>
+                <span style="color:red" ng-show="signup.password.$dirty && signup.password.$invalid">
+                    <span ng-show="signup.confirmPassword.$error.required">Confirm password is required.</span> 
+            </div> 
+
+            <div class="form-group">
+
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <label for="confirmPassword">CNIC photo attachment:</label>
+                    <span class="btn-file"><input type="file" id="photo" ng-model="photo"  /></span>
+                </div> 
+            </div>   
+            
+            <button type="submit" class="btn btn-default">Submit</button>
+            <button class="btn btn-default" ng-click="reset()">Clear</button>
+          </form>
+        </div> 
+      </div> 
+    </div> 
+    <div class="text-center" id="footer" style="margin-bottom:0">
+      <p>&copy; Mobile Computing 2018</p>
+    </div>
+  </div>
+  </div>
+</body> 
+</html>
